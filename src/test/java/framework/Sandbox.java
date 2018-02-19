@@ -18,21 +18,10 @@ public class Sandbox {
     public static void main(String[] args) {
 
         WebDriver driver = new ChromeDriver();
-        driver.navigate().to("https://www.amazon.com");
+        driver.navigate().to("https://www.darksky.net");
         driver.manage().window().maximize();
 
-        // Print Home Page Title
-        System.out.println("Got to Home Page.");
-        System.out.println("The tile of this page is:  " + driver.getTitle());
-        System.out.println();
-
-        // Hover over Account & Lists
-        Actions actions = new Actions(driver);
-        actions.moveToElement(driver.findElement(By.xpath("//span[@class='nav-line-1' and text()='Hello. Sign in']"))).perform();
-        System.out.println("I am now hovering on Sign In link.");
-
-        // Click sign in button
-        driver.findElement(By.xpath("//span[@class='nav-line-1' and text()='Hello. Sign in']")).click();
+        driver.findElement(By.xpath("//div[@class='hours']"));
 
         try {
             Thread.sleep(5000);
@@ -40,27 +29,51 @@ public class Sandbox {
             e.printStackTrace();
         }
 
-
-        // Print Login Page Title
-        System.out.println("Sign In Page title is: "  + driver.getTitle());
-
-
-        driver.findElement(By.xpath("//input[@type='email']")).sendKeys("Howard");
-
-
-
-
-//        Click continue button
-        driver.findElement(By.id("continue")).click();
-
-
-        System.out.println("The End.");
-
-
+        driver.quit();
 
 
     }
 }
+
+
+
+//        // Print Home Page Title
+//        System.out.println("Got to Home Page.");
+//        System.out.println("The tile of this page is:  " + driver.getTitle());
+//        System.out.println();
+//
+//        // Hover over Account & Lists
+//        Actions actions = new Actions(driver);
+//        actions.moveToElement(driver.findElement(By.xpath("//span[@class='nav-line-1' and text()='Hello. Sign in']"))).perform();
+//        System.out.println("I am now hovering on Sign In link.");
+//
+//        // Click sign in button
+//        driver.findElement(By.xpath("//span[@class='nav-line-1' and text()='Hello. Sign in']")).click();
+//
+//        try {
+//            Thread.sleep(5000);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
+//
+//
+//        // Print Login Page Title
+//        System.out.println("Sign In Page title is: "  + driver.getTitle());
+//
+//
+//        driver.findElement(By.xpath("//input[@type='email']")).sendKeys("Howard");
+//
+//
+//
+//
+////        Click continue button
+//        driver.findElement(By.id("continue")).click();
+//
+//
+//        System.out.println("The End.");
+//
+//
+//
 
 
 /*

@@ -1,6 +1,7 @@
 package framework;
 
 import org.openqa.selenium.By;
+import org.testng.Assert;
 
 /**
  * Created by howardguzman on 2/13/18.
@@ -25,7 +26,9 @@ public class AmzLoginPage extends BasePage {
 
     // This methods detects the There was a problem text box
     public void verifyErrorMsg() {
+
         getTextFromElement(thereWasAProblemTextBox);
-    }
+ //       Assert assert
+            }
 
 }

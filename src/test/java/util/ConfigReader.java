@@ -12,6 +12,7 @@ public class ConfigReader {
 
     private String url;
     private String chromeDriverPath;
+    private String browser;
 
     public ConfigReader() {
 
@@ -21,14 +22,37 @@ public class ConfigReader {
         try {
 
 //            input = new FileInputStream("config.properties");
-            input = new FileInputStream("config_amz.properties");
+            input = new FileInputStream("config.properties");
 
             // load a properties file
             prop.load(input);
 
             // get the property value and print it out
             this.url = prop.getProperty("url");
-            this.chromeDriverPath = prop.getProperty("chrome_driver_path");
+
+//            This chromeDriverPath assignment is now handled by the following switch statement
+//            this.chromeDriverPath = prop.getProperty("chrome_driver_path");
+
+            this.browser = prop.getProperty("browser");
+
+
+            switch(browser) {
+
+                case "chrome":
+                    this.browser = prop.getProperty("chrome_driver_path");
+                    break;
+
+                case "firefox":
+                    this.browser = prop.getProperty("");
+                    break;
+
+                default:
+
+                    System.out.println("No valid browser selected");
+
+
+
+            }
 
         } catch (IOException ex) {
             ex.printStackTrace();
